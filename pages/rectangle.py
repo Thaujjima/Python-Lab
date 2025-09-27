@@ -1,6 +1,5 @@
 import streamlit as st
-name = st.text_input("name")
-st.write(name)
+st.title("Rectangle Area Calculator")
 
 width = st.number_input("width")
 height = st.number_input("height")
