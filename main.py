@@ -51,15 +51,17 @@ if uploaded is not None:
     df = pd.read_csv(uploaded)
     df.columns = [c.strip().lower() for c in df.columns]
 else:
-    df = None
-    if use_sample:
-        for cand in default_candidates:
-            if cand and os.path.exists(cand):
-                try:
-                    df = load_data(cand)
-                    break
-                except Exception:
-                    pass
+    df = pd.read_csv("insurance.csv")
+
+    # df = None
+    # if use_sample:
+    #     for cand in default_candidates:
+    #         if cand and os.path.exists(cand):
+    #             try:
+    #                 df = load_data(cand)
+    #                 break
+    #             except Exception:
+    #                 pass
 
 if df is None:
     st.info("👈 Please upload **insurance.csv** from the provided file, or place it next to this script and tick **Use sample file**.")
